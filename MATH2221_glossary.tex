@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{changepage}
+\doublespacing
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\ihat}{\mathbf {\hat \imath}}
+\newcommand{\jhat}{\mathbf {\hat \jmath}}
+\newcommand{\nhat}{\mathbf {\hat n}}
+\DeclareMathOperator{\dis}{d}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\beginsp}[1]{\begin{adjustwidth}{2.5cm}{2.5cm}#1\end{adjustwidth}}
+\newcommand{\definition}[2]{\textbf{Definition. #1.}\begin{adjustwidth}{1cm}{1cm}#2\end{adjustwidth}}
+\rmfamily
+\setlength{\parindent}{0pt}
+\usepackage{geometry}
+\geometry{
+	paper=a4paper,
+	top=2.54cm,
+	bottom=2.54cm,
+	left=2.54cm, 
+	right=2.54cm, 
+	headheight=14pt, 
+	footskip=1.2cm,
+	headsep=1.2cm, 
+}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+    \vspace*{\fill}
+
+    \vspace*{0.5cm}
+
+    \huge\bfseries
+    Glossary: Theorems and Definitions From Higher Theory and Application of Differential Equations
+
+    \vspace*{2cm}
+
+    \large Dylan Wang (z5422214)
+
+    \vspace*{2cm}
+
+    \large May 2023, Term 2
+
+    \vspace*{\fill}
+\end{titlepage}
+\newpage
+
+\definition{First-order ODE}{A differential equation of the form $y'(t) = f(t, y(t)).$\\\textsuperscript{*}It is called a `first-order' ODE because the degree of the derivative is only 1.} ~\\
+\definition{Linear first-order ODE}{An ODE of the form \[a(t)yf'(t)+b(t)y(t)=f(t)\] with $a(t) \neq 0$ on some interval $I \subseteq \mathrm{R}$.\\\textsuperscript{*}It is `linear' because the `variables' (i.e. $y, \; y', \; y'',$ etc.) are linear.} ~\\
+\definition{Separable first-order ODE}{An ODE of the form \[y'(t) = f(t)g(y).\]The solution is (implicitly) found by writing \[\int \frac{1}{g(y)} \; \mathrm{d}y = \int f(t) \; \mathrm{d}t.\]\textsuperscript{*}These equations are called separable differential equations because we can separate everything involving $t$ from everything involving $y$.} ~\\
+\definition{Integrating factor method}{For a linear first-order ODE, we generally cannot separate the variables. However, suppose there is a function $\mu(t)$, called an \textbf{integrating factor} such that \[[\mu y](t)' = \mu(t)(y' + a(t)y) = \mu(t)f(t),\]for if this happens, then the general solution of the ODE should be \[y(t)=\frac{1}{\mu(t)}\int \mu(t) f(t) \; \mathrm{d}t + \frac{C}{\mu(t)}.\]We find that $\mu(t) = e^{\int a(t) \; \mathrm{d} t}.$}
+\end{document}
