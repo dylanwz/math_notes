@@ -1,0 +1,9 @@
+*
+!.gitignore
+
+!/assets/*
+
+!*/
+!*/*.pdf
+!*/*/*.tex
+!*/*/*.pdf
