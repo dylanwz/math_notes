@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
+\usepackage{tabularx}
 \usepackage{changepage}
 \doublespacing
 \usepackage[dvipsnames]{xcolor}
@@ -54,7 +55,31 @@
 \newpage
 
 \definition{First-order ODE}{A differential equation of the form $y'(t) = f(t, y(t)).$\\\textsuperscript{*}It is called a `first-order' ODE because the degree of the derivative is only 1.} ~\\
-\definition{Linear first-order ODE}{An ODE of the form \[a(t)y'(t)+b(t)y(t)=f(t)\] with $a(t) \neq 0$ on some interval $I \subseteq \mathrm{R}$.\\\textsuperscript{*}It is `linear' because the `variables' (i.e. $y, \; y', \; y'',$ etc.) are linear.} ~\\
-\definition{Separable first-order ODE}{An ODE of the form \[y'(t) = f(t)g(y).\]The solution is (implicitly) found by writing \[\int \frac{1}{g(y)} \; \mathrm{d}y = \int f(t) \; \mathrm{d}t.\]\textsuperscript{*}These equations are called separable differential equations because we can separate everything involving $t$ from everything involving $y$.} ~\\
-\definition{Integrating factor method}{For a linear first-order ODE, we generally cannot separate the variables. However, suppose there is a function $\mu(t)$, called an \textbf{integrating factor} such that \[[\mu y](t)' = \mu(t)(y' + a(t)y) = \mu(t)f(t),\]for if this happens, then the general solution of the ODE should be \[y(t)=\frac{1}{\mu(t)}\int \mu(t) f(t) \; \mathrm{d}t + \frac{C}{\mu(t)}.\]We find that $\mu(t) = e^{\int a(t) \; \mathrm{d} t}.$}
+\definition{Linear first order ODE}{An ODE of the form \[a(t)y'(t)+b(t)y(t)=f(t)\] with $a(t) \neq 0$ on some interval $I \subseteq \mathrm{R}$.\\\textsuperscript{*}It is `linear' because the `variables' (i.e. $y, \; y', \; y'',$ etc.) are not raised to a power.} ~\\
+\definition{Separable first order ODE}{An ODE of the form \[y'(t) = f(t)g(y).\]The solution is (implicitly) found by writing \[\int \frac{1}{g(y)} \; \mathrm{d}y = \int f(t) \; \mathrm{d}t.\]\textsuperscript{*}These equations are called separable differential equations because we can separate everything involving $t$ from everything involving $y$.} ~\\
+\definition{Integrating factor method}{For a linear first order ODE (i.e. $y' + a(t)y = f(t)$), we generally cannot separate the variables. But suppose there is a function $\mu(t)$, called an \textbf{integrating factor} such that \[[\mu y](t)' = \mu(t)(y' + a(t)y) = \mu(t)f(t),\]for if this happens, then the general solution of the ODE should be \[y(t)=\frac{1}{\mu(t)}\int \mu(t) f(t) \; \mathrm{d}t + \frac{C}{\mu(t)}.\]We find that $\mu(t) = e^{\int a(t) \; \mathrm{d} t}.$} \newpage
+\definition{Homogeneous Differential Equations}{Homogeneous differential equation are differential equations of the form \[\frac{dy}{dx}=f \left( \frac{y}{x} \right),\] where $y$ = $y(x)$.\\[1\baselineskip]They can be solved using the substitution $y=vx$, where $v$ is a function of $x$. We will always get a separable differential equation. Observe. \begin{align} \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\mathrm{d}v}{\mathrm{d}x}x + v \notag \\ \frac{\mathrm{d}v}{\mathrm{d}x}x + v &= f\left(\frac{vx}{x}\right) = f(v) \notag \\ \frac{\mathrm{d}v}{\mathrm{d}x} &= \frac{f(v) - v}{x}. \notag \end{align}} ~\\
+\definition{Second Order Linear Differential Equations}{A second order linear differential equation is a differential equation of the form \[p(x)\frac{\mathrm{d}^2y}{\mathrm{d}x^2} + q(x) \frac{\mathrm{d}y}{x} + r(x)y = G(x),\]where if $G(x) = 0$ we have a homogenous equation.\\[1\baselineskip]Note that the derivative of the exponential function at any point is itself. From this, the generic solution takes the form $y = e^{rx}$.\\[1\baselineskip]For the homogenous equation first:\\Assume the solution is of the form $y = e^{rx}$ for some constant $r$. Then \begin{align}y'' &= r^2e^{rx}, \notag \\ y' &= re^{rx}, \notag \\ y &= e^{rx}. \notag\end{align} So substituting into the differential equation gives \begin{align}e^{rx}\left( p(x)r^2 + q(x)r + r(x) \right)&= 0, \notag \\ p(x)r^2 + q(x)r + r(x) &= 0. \notag\end{align}Solve this quadratic for $r$, with three cases.\begin{enumerate} \item $\Delta > 0$: $y = c_1 e^{r_1x} + c_2 e^{r_2x},$ for some $c_1$ and $c_2$. These constants represent that any linear combination of $e^{r_1x}$ and $e^{r_2x}$ is a solution (since $= 0$).\item $\Delta = 0$: $y = ce^{rx}$.\item $\Delta < 0 \implies r_1 = \alpha + \beta i$, $r_2 = \alpha - \beta i$: $y = e^{\alpha x}[c_1 \cos (\beta x) + c_2 \sin (\beta x)]$. \end{enumerate}Now for the non-homogenous case. We call the solution to this the particular solution. We make a guess from the form of the non-homogeneity.\begin{table}[htbp]
+    \begin{tabularx}{\textwidth}{|c|X|}
+      \hline
+      Non-Homogeneity & Particular Solution Form \\
+      \hline
+      Constant term ($f(x) = a$) & $y_p(x) = A$ \\
+      \hline
+      Polynomial term ($f(x) = P_n(x)$) & $y_p(x) = Q_n(x) \cdot x^m$, where $Q_n(x)$ is a polynomial of degree $n$ \\
+      \hline
+      Exponential term ($f(x) = e^{rx}$) & $y_p(x) = A \cdot e^{rx}$, where $r$ is not a root of the characteristic equation \\
+      \hline
+      Sine or cosine term ($f(x) = \sin(kx)$ or $f(x) = \cos(kx)$) & $y_p(x) = A \cdot \sin(kx) + B \cdot \cos(kx)$ \\
+      \hline
+      Exponential times a polynomial ($f(x) = e^{rx} \cdot P_n(x)$) & $y_p(x) = Q_n(x) \cdot e^{rx}$, where $Q_n(x)$ is a polynomial of degree $n$ \\
+      \hline
+      Combination of the above forms & The particular solution is the sum of the particular solutions corresponding to each component \\
+      \hline
+    \end{tabularx}
+    \caption{If any of the coefficients match that of the characteristic polynomial, you must add an extra $x$.}
+    \label{tab:nonhomogeneities}
+  \end{table}}
+  Then the general solution is $y = y_h + y_p$.\newpage
+  dd
 \end{document}
