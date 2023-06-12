@@ -43,7 +43,7 @@
     \vspace*{0.5cm}
 
     \huge\bfseries
-    Glossary: Higher Linear Algebra: Definitions and THeorems
+    Higher Linear Algebra\\Definitions and Theorems
 
     \vspace*{2cm}
 
@@ -101,7 +101,7 @@ Let $m$ be a positive integer and consider the set \[C_m = \{e, a, a^2, a^3, \ld
 \end{enumerate}\newpage
 \definition{Subfields}{If $(\mathbb{F}, +, \times)$ is a field and $\mathbb{E} \subseteq \mathbb{F}$ is also a field under the same operations, then $(\mathbb{E}, +, \times)$ is a subfield of $(\mathbb{F}, +, \times)$, usually written $\mathbb{E} \leq \mathbb{F}$.}~\\
 \lemma{The Subfield Lemma}{Let $\mathbb{E} \neq \{0\}$ be a non-empty subset of field $\mathbb{F}$.\\Then $\mathbb{E}$ is a subfield of $\mathbb{F}$ if and only if for all $a,b \in \mathbb{E}$ \[a + b \in \mathbb{E}, \quad -b \in \mathbb{E}, \quad a \times b \in \mathbb{E}, \quad b^{-1} \in \mathbb{E} \; \text{if} \; b \neq 0.\]Proof: The distributive laws are inherited from $\mathbb{F}$, and the rest of the proof comes from applying the subgroup lemma to $(\mathbb{E}, +)$ and $(\mathbb{E}, \times)$.}~\\
-\definition{Morphisms}{Let $(G, *)$ and $(H, \circ)$ be two groups. A (group) homomorphism from $G$ to $H$ is a map $\phi : G \rightarrow H$ that respects the two operations, that is where \[\phi(a * b) = \phi(a) \circ \phi(b) \quad \text{for all} \; a,b \in G.\]A bijective homomorphism $\phi: G \rightarrow H$ is called an isomorphism; the groups are then said to be isomorphic, and are considered the same group. isomorphism is an equivalence relation.\\[1\baselineskip]\textsuperscript{*}the word `homomorphism' comes from the Ancient Greek language: homos meaning ``same'' and morphe meaning ``form'' or ``shape''.\\[1\baselineskip]\textsuperscript{**}Homomorphic maps preserve the structure of the domain group while respecting that of the codomain. The idea is if $a * b$, then under the map $\phi$, we hope that (mapped) $a$ behaves the same with (mapped) $b$ in the codomain. If so, they are homomorphic.}~\\
+\definition{Morphisms}{Let $(G, *)$ and $(H, \circ)$ be two groups. A (group) homomorphism from $G$ to $H$ is a map $\phi : G \rightarrow H$ that respects the two operations, that is where \[\phi(a * b) = \phi(a) \circ \phi(b) \quad \text{for all} \; a,b \in G.\]A bijective homomorphism $\phi: G \rightarrow H$ is called an isomorphism; the groups are then said to be isomorphic, and are considered the same group. Isomorphism is an equivalence relation.\\[1\baselineskip]\textsuperscript{*}the word `homomorphism' comes from the Ancient Greek language: homos meaning `same' and morphe meaning `form' or `shape'.\\[1\baselineskip]\textsuperscript{**}Homomorphic maps preserve the structure of the domain group while respecting that of the codomain. The idea is if $a * b$, then under the map $\phi$, we hope that (mapped) $a$ behaves the same with (mapped) $b$ in the codomain. If so, they are homomorphic.}~\\
 \textbf{Example}. Let $m \geq$ 2 be any integer. Define $\phi: (\mathbb{Z},+) \rightarrow (m\mathbb{Z},+)$ by $\phi(a) = ma$. Show that $\phi$ is an isomorphism of groups.\\
 \textbf{Solution.} Firstly \[\phi(a+b)=m(a+b)=ma+mb=\phi(a)+\phi(b).\]The easiest way to show $\phi$ is a bijection is to find the inverse. But if $g \in m\mathbb{Z}$ then $g=ma$ for some $a \in \mathbb{Z}$ and clearly $\phi(a) = g$, so $\phi^{-1}(g) = a$. Thus $\phi$ is an isomorphism.\\[1\baselineskip]
 \lemma{Homomorphism Lemma}{Let $(G, *)$ and $(H, \circ)$ be two groups and $\phi$ a homomorphism between them. Then \begin{itemize}\item $\phi$ maps the identity of $G$ to the identity of $H$.\item $\phi$ maps inverses to inverses, i.e. $\phi(a^{-1})=(phi(a))^{-1}$ for all $a \in G$.\item if $\phi$ is an isomorphism frmo $G$ to $H$ then $\phi^{-1}$ is an isomorphism from $H$ to $G$.\end{itemize}}~\\
@@ -156,7 +156,7 @@ Let $m$ be a positive integer and consider the set \[C_m = \{e, a, a^2, a^3, \ld
   \item If $S$ is linearly dependent, then there is a vector $\vect{v}$ in $S$ such that span$(S) \backslash \{ \vect{v} \} = $ span$(S)$.
   \item In $\mathbb{F}^p$, if $P \in$ GL$(p, \mathbb{F})$ is an invertible matrix and $\{ \vect{v}_i \}$ is linearly independent, then the set $\{ P \vect{v}_i \}$ is also linearly independent. \{Proof by contradition\}.
 \end{itemize}}~\\
-\definition{Bases}{Let $S \subseteq V$. The set $S$ is a basis for $V$ over $|mathbb{F}$ if and only if $V =$ span$(S)$, and $S$ is a linearly dependent set.\\[1\baselineskip]\textsuperscript{*}think the `basic' foundation of a vector space; the minimal set of vectors from which we can form all vectors in $V$ via linear combinations.}
+\definition{Bases}{Let $S \subseteq V$. The set $S$ is a basis for $V$ over $\mathbb{F}$ if and only if $V =$ span$(S)$, and $S$ is a linearly dependent set.\\[1\baselineskip]\textsuperscript{*}think the `basic' foundation of a vector space; the minimal set of vectors from which we can form all vectors in $V$ via linear combinations.}
 \begin{center}
   \includegraphics[scale=0.18]{assets/basis_eg.png}
 \end{center}
