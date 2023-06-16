@@ -7,5 +7,5 @@
 !*/*.pdf
 !*/*/*.tex
 !*/*/*.pdf
-!*/*/*/assets
-!*/*/*/assets/*
+!*/*/assets
+!*/*/assets/*
