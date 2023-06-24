@@ -229,5 +229,56 @@ The identity maps aren't doing anything, but are easy to find and useful for cha
 \definition{3.10. Similarity Invariant}{A property of matrices is called a similarity invariant if it is the same for all similar matrices, e.g. the determinant which is the change of the area under the mapping.}~\\
 \theorem{3.24}{The rank, nullity and trace (the sum of a square matrix' diagonal elements) are all similarity invariants. (Note: so are eigenvalues, but kernels and images are, in general, not).}~\\
 \definition{3.11. Multilinear Maps}{Let $V_1, V_2$ and $W$ be vector spaces over field $\mathbb{F}$. A map $T: V_1 \times V_2 \rightarrow W$ is bilinear if it is linear in each argument, that is \begin{align} T(\lambda \vect{v}_1 + {\vect{1}_1}', \vect{v}_2) &= \lambda T(\vect{v}_1, \vect{v}_2) + T( {\vect{v}_1}' + \vect{v}_2) \\ T(\vect{v}_1, \lambda \vect{v}_2 + { \vect{v}_2 }') &= \lambda T (\vect{v}_1 , \vect{v}_2 ) + T ( \vect{v}_1, { \vect{v}_2 }') \end{align} for all suitable vectors and scalars.\\If $V_2 = V_1$ we call $T$ bilinear on $V_1$.\\[\baselineskip]\textsuperscript{*}i.e. for (1), if we ignore $\vect{v}_2$ it fulfils the linearity condition, and for (2) if we ignore $\vect{v}_1$ it still fulfills the linearity condition; it is separately linear for each argument.\\[\baselineskip]\textsuperscript{**}e.g. the standard dot product, the scalar triple product on $\mathbb{R}^3$ (trilinear), the determinant.}~\\
-\definition{3.12. Symmetric Multilinear Maps}{A multilinear map $T$ on $V$ is said to be symmetric if its value on any ordered set of vectors is unchanged when any two of the vectors are swapped.\\If such a swap alaways simply changes the sign of the value, $T$ is called alternating.\\[1\baselineskip]\textsuperscript{*}e.g. the dot product is symmetric since $\vect{a} \cdot \vect{b} = \vect{b} \cdot \vect{a}$; the triple scalar product is alternating.}
+\definition{3.12. Symmetric Multilinear Maps}{A multilinear map $T$ on $V$ is said to be symmetric if its value on any ordered set of vectors is unchanged when any two of the vectors are swapped.\\If such a swap alaways simply changes the sign of the value, $T$ is called alternating.\\[1\baselineskip]\textsuperscript{*}e.g. the dot product is symmetric since $\vect{a} \cdot \vect{b} = \vect{b} \cdot \vect{a}$; the triple scalar product is alternating.}\newpage
+\definition{4.1. Positive Definite}{A bilinear $\mathbb{F}$-valued map, $T$, on $\mathbb{F}^P$ is positive definite if for all $\vect{a} \in \mathbb{F}^p, T(\vect{a}, \vect{a}) \geq 0$ and $T(\vect{a}, \vect{a}) = 0$ if and only if $a = 0$.}~\\
+\theorem{4.1. Cauchy-Schwarz Inequality in $\mathbb{R}^p$}{For any $\vect{a}, \vect{b} \in \mathbb{R}^p$ we have \[- ||\vect{a}|| \; || \vect{b} || \leq \vect{a} \cdot \vect{b} \leq || \vect{a}|| \; ||\vect{b}.\]}
+\corollary{4.2}{If $\vect{a} \neq \vect{0}$, $\vect{b} \neq \vect{0}$ then \[-1 \leq \frac{\vect{a} \cdot \vect{b}}{||\vect{a}|| \; || \vect{b}||} \leq 1.\]Note: In $\mathbb{R}^2, \vect{a} \cdot \vect{b} = || \vect{a} || \; || \vect{b} || \cos{\theta}$, for $0 \leq \theta \leq \pi$ the angle between the vectors.}~\\
+\definition{4.2. Angle Between Vectors}{If $\vect{a}, \vect{b} \in \mathbb{R}^n$ are non-zero then the angle $\theta$ between $\vect{a}$ and $\vect{b}$ is defined by \[ \cos \theta = \frac{\vect{a} \cdot \vect{b}}{||\vect{a}|| \; || \vect{b}||}, \qquad \theta \in [0, \pi].\]We call non-zero vectors $\vect{a}$ and $\vect{b}$ orthogonal if $\vect{a} \cdot \vect{b} = 0$.}~\\
+\definition{4.3. Orthogonal Component}{Let $X \leq \mathbb{R}^p$ for some $p$. The space \[Y = \{ \vect{y} \in \mathbb{R}^p : \vect{y} \cdot \vect{x} = 0 \quad \text{for all} \quad \vect{x} \in X \}\]is called the orthoginal complement of $X$, $X^{\perp}$.\\[1\baselineskip]\textsuperscript{*}i.e. it denotes another subspace orthogonal to everything in $X$.}~\\
+\corollary{4.3}{For any $X \leq \mathbb{R}^p, \mathbb{R}^p = X \oplus X^\perp$ and $(X^\perp)^\perp = X$.}\newpage
+\definition{4.4. Orthonormal}{A set $S = \{ \vect{v}_1, \ldots, \vect{v}_k \} \subseteq \mathbb{R}^p$ of non-zero vectors is orthogonal if $\vect{v}_i \cdot \vect{v}_j = 0, i \neq j$.\\We say $S$ is orthonormal if $\vect{v}_i \cdot \vect{v}_j = \delta{ij} = \begin{cases}
+  0 & i \neq j\\
+  1 & \text{otherwise}
+\end{cases}$.}~\\
+\lemma{4.4}{An orthogonal set $S$ in $\mathbb{R}^p$ is linearly independent.}~\\
+\theorem{4.5. The Triangle Inequality}{For $\vect{a}, \vect{b} \in \mathbb{R}^p$ \[|| \vect{a} + \vect{b} || \leq ||\vect{a}|| + || \vect{b} ||.\]\textbf{Proof}: Start with $|| \vect{a} + \vect{b}||^2$ and use Cauchy-Schwarz.}~\\
+\definition{4.5. Standard Dot Product in $\mathbb{C}^p$}{The standard dot product in $\mathbb{C}^p$ is defined by \[\vect{a} \cdot \vect{b} = \sum_{i=1}^p \bar{a_i}b_i = \bar{\vect{a}}^T \vect{b}.\]}~\\
+\lemma{4.6}{The standard dot product in $\mathbb{C}^p$ has the following properties:
+\begin{enumerate}
+  \item $\vect{a} \cdot (\lambda \vect{b} + \vect{c}) = \lambda \vect{a} \cdot \vect{b} + \vect{a} \cdot \vect{c}$ for $\lambda \in \mathbb{C}$.
+  \item $\vect{b} \cdot \vect{a} = \overline{\vect{a} \cdot \vect{b}}$.
+  \item $(\lambda \vect{b} + \vect{c}) \cdot \vect{a} = \bar{\lambda} \vect{b} \cdot \vect{a} + \vect{c} \cdot \vect{a}$ for $\lambda \in \mathbb{C}$.
+  \item $|| \vect{a} || \geq 0$ and $|| \vect{a} || = 0 \iff \vect{a} = 0$. 
+\end{enumerate}}~\\
+\definition{4.6. Inner Product Space}{If $V$ is a vector space over $\mathbb{F}$ then an inner product on $V$ is a function $\langle,\rangle: V \times V \rightarrow \mathbb{F}$, that is, for all $\vect{u}, \vect{v} \in V,  \langle\vect{u}, \vect{v}\rangle \in \mathbb{F}$, such that
+\begin{enumerate}
+  \item $\langle\vect{u}, \vect{v} + \vect{w}\rangle = \langle\vect{u}, \vect{v}\rangle + \langle\vect{u}, \vect{w}\rangle$.
+  \item $\langle\vect{u}, \alpha \vect{v}\rangle = \alpha \langle\vect{u}, \vect{v}\rangle$.
+  \item $\langle\vect{v}, \vect{u}\rangle = \overline{\langle\vect{u}, \vect{v}\rangle}$.
+  \item $\langle\vect{v}, \vect{v}\rangle$ is real and $> 0$ if $\vect{v} \neq \vect{0}$ and $= 0$ if $\vect{v} = \vect{0}$.
+\end{enumerate}
+We call $V$ with $\langle , \rangle$ an inner product space. The norm of a vector is then $|| \vect{v} || = \langle \vect{v}, \vect{v} \rangle^{1/2}$.}\newpage
+\lemma{4.7}{Let $V$ be an inner product space. Then for $\vect{u}, \vect{v}, \vect{w} \in V$ and $\alpha \in \mathbb{C}$:
+\begin{itemize}
+  \item $|| \vect{u} || > 0$ if and only if $\vect{u} \neq \vect{0}$.
+  \item $\langle \vect{u} + \vect{v}, \vect{w} \rangle = \langle \vect{u}, \vect{w} \rangle + \langle \vect{v}, \vect{w} \rangle$.
+  \item $\langle \alpha \vect{u}, \vect{v} \rangle = \bar{\alpha} \langle \vect{u}, \vect{v} \rangle$ and $|| \alpha \vect{u} || = | \alpha | \; || \vect{u} || $.
+  \item $\langle \vect{x}, \vect{u} \rangle = 0$ for all $\vect{u}$ if and only if $\vect{x} = \vect{0}$.
+  \item $| \langle \vect{u}, \vect{v} \rangle | \leq || \vect{u} || \; || \vect{v} ||$ (Cauchy-Schwarz inequality).
+  \item $|| \vect{u} + \vect{v} || \leq || \vect{u} || + || \vect{v} ||$ (the triangle inequality).
+\end{itemize}}~\\
+\definition{4.4. Orthogonality and Orthonormality}{Let $V$ be an inner product space. Non-zero vectors $\vect{u}$ and $\vect{v}$ are orthogonal if $\langle \vect{u}, \vect{v} \rangle = 0$; we will use the notation $\vect{u} \perp \vect{v}$ for this.\\A set $S = \{ \vect{v}_1, \ldots , \vect{v}_k \} \subseteq V$ of non-zero vectors is orthogonal if $\langle \vect{v}_i, \vect{v}_j \rangle = 0, i \neq j$.\\We say $S$ is orthonormal if $\langle \vect{v}_i, \vect{v}_j \rangle = \delta_{ij} = \begin{cases} 1 & i=j \\ 0 & i \neq j \end{cases}$.\\[1\baselineskip]\textsuperscript{*}we can see that an inner product space is a generalisation for the dot product.}~\\
+\definition{4.8. Projection}{In an inner product space $V$ let $\vect{v} \neq \vect{0}$.\\The projection of $\vect{u} \in V$ onto $\vect{v}$ is defined as \[ \text{proj}_\vect{v}(\vect{u}) = \frac{\langle \vect{u}, \vect{u} \rangle}{\langle \vect{v}, \vect{v} \rangle} \vect{v}.\]Note: $\vect{u} - \alpha \vect{v} \perp \vect{v} \iff \vect{u} - \alpha \vect{v} = \vect{u} - \text{proj}_\vect{v} \vect{u}$.}~\\
+\lemma{4.8}{If $S = \{ \vect{v}_1, \ldots, \vect{v}_k \}$ is an orthogonal set of non-zero vectors in inner product space $V$ and $\vect{v} \in \text{span}(S)$ then $\vect{v} = \sum_{i=1}^k \text{proj}_{\vect{v}_i} \vect{v}$.\\If $S$ is an orthonormal set $\vect{v} = \sum_{i=1}^k \langle \vect{v}_i, \vect{v} \rangle \vect{v}_i$.}~\\
+\corollary{4.9}{If $\{ \vect{e}_1, \ldots , \vect{e}_n \}$ is an orthonormal basis for $V$ then $\vect{v} = \sum_{i=1}^n \langle \vect{e}_i, \vect{v} \rangle \vect{e}_i$.}\newpage
+\theorem{4.10. Gram-Schmidt Process}{Every finite dimensional inner product space has an orthonormal basis.\\\textbf{Proof}: Constructive. We show how to turn any given basis into an orthogonal one and then normalise.\\[1\baselineskip]
+Suppose $S = \{ \vect{v}_1, \ldots, \vect{v}_p \}$ is a basis for $V$ over $\mathbb{F}$. Then let
+\begin{align*}
+  \vect{w}_1 &= \vect{v}_1 \notag \\
+  \vect{w}_2 &= \vect{v}_2 - \text{proj}_{\vect{w}_1}(\vect{v}_2) \notag \\
+  \vect{w}_3 &= \vect{v}_3 - \text{proj}_{\vect{w}_1}(\vect{v}_3) - \text{proj}_{\vect{w}_2}(\vect{v}_3) \notag \\
+  \ldots \notag \\
+  \vect{w}_{k+1} &= \vect{v}_{k+1} - \sum_{j=1}^k \text{proj}_{\vect{w}_j} (\vect{v}_{k+1}). \notag
+\end{align*}
+These resulting $\vect{w}$ vectors must be orthogonal because you subtract anything that isn't orthogonal (any overlaps). Then use an inductive hypothesis to show it is spanning.}
 \end{document}
