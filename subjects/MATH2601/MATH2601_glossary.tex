@@ -280,5 +280,171 @@ Suppose $S = \{ \vect{v}_1, \ldots, \vect{v}_p \}$ is a basis for $V$ over $\mat
   \ldots \notag \\
   \vect{w}_{k+1} &= \vect{v}_{k+1} - \sum_{j=1}^k \text{proj}_{\vect{w}_j} (\vect{v}_{k+1}). \notag
 \end{align*}
-These resulting $\vect{w}$ vectors must be orthogonal because you subtract anything that isn't orthogonal (any overlaps). Then use an inductive hypothesis to show it is spanning.}
+These resulting $\vect{w}$ vectors must be orthogonal because you subtract anything that isn't orthogonal (any overlaps). Then use an inductive hypothesis to show it is spanning.}~\\
+\definition{4.6. Orthogonal Complements}{Let $X \leq V$ for some inner product space $V$. The space \[Y = \{ \vect{y} \in V: \langle \vect{y}, \vect{x} \rangle = 0 \quad \text{for all} \quad \vect{x} \in X \}\] is called the orthogonal complement of $X$, $X^{\perp}$.}~\\
+\corollary{4.12}{Suppose $V$ is a finite dimensional inner product space, $W \leq V$ and $\vect{v} \in V$ then \[\vect{v} = \vect{a} + \vect{b}, \; \vect{a} \in W, \; \vect{b} \in W^{\perp}\] where $\vect{a}$ and $\vect{b}$ are unique.\\We say $\vect{a} = \text{proj}_W \vect{v}$ and $\vect{b} = \text{proj}_{W^{\perp}} \vect{v}$.}\newpage
+\lemma{4.13}{In finite dimensional product space $V$ with $W \leq V$:
+\begin{itemize}
+  \item If $\vect{v} \in W$ then $\vect{v} - \text{proj}_W(\vect{v})$ is in $W^{\perp}$.
+  \item If $\vect{v} \in W$ then $\text{proj}_W(\vect{w}) = \vect{w}$. Consequently, the projection mapping is idempotent, i.e. $(\text{proj}_W) \circ (\text{proj}_W) = \text{proj}_W$.
+  \item For all $\vect{v} \in V$ we have $|| \text{proj}_W(\vect{v})|| \leq || \vect{v} ||$.
+  \item The function $\text{proj}_W + \text{proj}_{W^\perp}$ is the identity function on $V$.
+\end{itemize}
+}~\\
+\lemma{4.14}{Let $W$ be a subspace of a finite-dimensional inner product space $V$, and let $\vect{v} \in V$. For every $\vect{w} \in W$ we have \[||\vect{v}-\vect{w}|| \geq ||\vect{v} - \text{proj}_W(\vect{v})||,\]with equality if and only if $\vect{w} = \text{proj}_W(\vect{v})$.}~\\
+\lemma{4.15}{If $(V, \langle , \rangle)$ is a finite dimensional inner product space and $T : V \rightarrow \mathbb{F}$ is linear then there is a unique vector $\vect{t} \in V$ such that for all $\vect{v} \in V, \; T(\vect{v}) = \langle \vect{t}, \vect{v} \rangle$.}~\\
+\theorem{4.16}{For any linear map $T : V \rightarrow W$ between finite-dimensional inner product spaces, there is a unique lienar map $T^*:W \rightarrow V$ called the adjoint of $T$ with \[\langle \vect{w}, T(\vect{v}) \rangle = \langle T^*(\vect{w}), \vect{v} \rangle\]for all $\vect{v} \in V$ and $\vect{w} \in W$.}~\\
+\lemma{4.17}{For any inner product space $V$, the identity map is its own adjoint.}\newpage
+\theorem{4.17}{Suppose that $V$ and $W$ are finite-dimensional inner product spaces; let $S$ and $T$ be linear transformations from $V$ to $W$. Then
+\begin{itemize}
+  \item $(S+T)^* = S^* + T^*$
+  \item for any scalar $\alpha$ we have $(\alpha T)^* = \overline{\alpha}T^*$;
+  \item $(T^*)^* = T$.
+  \item if $U: W \rightarrow X$ is linear then $(U \circ T)^* = T^* \circ U^*$.
+\end{itemize}}~\\
+\theorem{4.19}{Let $V$ and $W$ be finite-dimensional inner product spaces with orthonormal bases $\mathcal{B}$ and $\mathcal{C}$ respectively. If $A$ is the matrix of the linear transformation $T: V \rightarrow W$ with respect to bases $\mathcal{B}$ and $\mathcal{C}$, then the matrix of $T^*: W \rightarrow V$ with respect to bases $\mathcal{B}$ and $\mathcal{C}$ is the adjoint of $A$.}~\\
+\definition{4.11}{Let $T: V \rightarrow V$ be a linear map on a finite-dimensional inner product space $V$. Then $T$ is said to be
+\begin{itemize}
+  \item unitary if $T^* = T^{-1}$;
+  \item an isometry if $||T(\vect{v})|| = ||\vect{v}||$ for all $\vect{v} \in V$;
+  \item self-adjoint or Hermitian if $T^* = T$.
+\end{itemize}}~\\
+\theorem{4.21}{Let $T$ be a linear map on a finite-dimensional inner product space $V$. Then the following are equivalent:
+\begin{itemize}
+  \item $T$ is an isometry;
+  \item $\langle T(\vect{v}), T(\vect{W}) \rangle = \langle \vect{v}, \vect{w} \rangle$ for all $\vect{v}, \vect{w} \in V$, i.e. $T$ preserves inner products;
+  \item $T$ is unitary, i.e. $T^* \circ T$ is the identity;
+  \item $T^*$ is an isometry;
+  \item if $\{ \vect{e}_1, \ldots, \vect{e}_n \}$ is an orthonormal basis for $V$ then so is $\{T(\vect{e}_1), \ldots, T(\vect{e}_n) \}$.
+\end{itemize}}\newpage
+\definition{4.12}{A matrix $A \in M_{p,p}(\mathbb{C})$ is called unitary if $A^* = A^{-1}$ and Hermitian if $A^* = A$.\\A matrix $A \in M_{p,p}(\mathbb{R})$ is called orthogonal if $A^T = A^{-1}$ and symmetric if $A^T = A$.}~\\
+\corollary{4.22}{The columns of a $p \times p$ matrix are an orthonoral basis of $\mathbb{C}^p$ if and only if $A$ is unitary.\\The columns of a $p \times p$ matrix are an orthonormal basis of $\mathbb{R}^p$ if and only if $A$ is orthogonal. The same results apply to rows.}~\\
+\theorem{4.23. QR Factorisations}{If $A$ is a $p \times p$ of rank $q$ then we can write $A = QR$ where $Q$ is a $p \times p$ matrix with orthonormal columns, and $R$ is a $q \times q$ invertible upper triangular matrix.\\[1\baselineskip]\textbf{Proof}. One way of proving this is to express the Gram-Schmidt algorithm in terms of matrices:\\Let $A$ have colums $\vect{v}_1, \ldots \vect{v}_q$ and define
+\[ \vect{w}_1 = \vect{v}_1, \quad \vect{q}_1 = \frac{\vect{w}_1}{||\vect{w}_1||}; \]
+\[ \vect{w}_k = \vect{v}_k - \sum_{j=1}^{k-1} \langle \vect{q}_j, \vect{v}_k \rangle \vect{q}_j, \quad \vect{q}_k = \frac{\vect{w}_k}{||\vect{w}_k||}, 2 \leq k \leq q. \]
+We make the $\vect{v}_i$ the subjects of the equations so that $A = QR$. Check lecture 26.}~\\
+\corollary{4.24}{Let $\vect{A} \in M_{p,q}(\mathbb{F})$ with $p > q$ and $\text{rank}(A) = q$. Then we can write $A = \tilde{Q}\tilde{R}$, with $\tilde{Q}$ being $p \times p$ unitary (or orthogonal), and $\tilde{R}$ being $p \times p$, of rank $q$ and in echelon form.}~\\
+\definition{4.10. The Method of Least Squares}{Suppose we have a lot of data and in trying to fit a model to it we find ourselves solving a system of linear questions $A\vect{x} = \vect{b}$. Also suppose that we want to take all the data into account and not introduce too many unknowns, and thus end up solving $p$ equations in $q$ unknowns, with $p > q$. Typically, there will be no exact solution: what's the best that can be done? We also need to know what we mean by `best'. The answer to both, is to minimise the sum of the squares of the erorrs. So we minimise $||A\vect{x} = \vect{b}||$ using the standard inner product on $\mathbb{R}^p$ or $\mathbb{C}^p$. We call these solutions the least squares solutions to the system.}\newpage
+\definition{5.1}{If a permutation $\sigma = [p_1, p_2, \ldots, p_n]$ of $\Omega_n$ contains $k$ inversions then its sign, $\text{sign}(\sigma) = (-1)^k$. A permutation is called even or odd depending on whether the number of inversions is even or odd.}~\\
+\definition{5.2}{The determinant of an $n \times n$ matrix $A = (a_{ij})_{i,j=1,\ldots ,n}$ is \[\text{det}(A) = \sum_{\sigma \in S_n} \text{sign}(\sigma)a_{1 \sigma (1)} a_{2\sigma(2)} \ldots a_{n \sigma (n)}.\]}~\\
+\definition{5.3}{Define the $n^\text{th}$ difference product $\Delta_n$ by
+\begin{align}
+  \Delta_n &= \prod_{i=1, j>i}^n (i-j) \notag \\
+  &= (1-2)(1-3) \ldots (1-n)(2-3)(2-4) \ldots ((n-1)-n). \notag
+\end{align}
+We now define the action of a permutation $\sigma \in S_n$ on $\Delta_n$ by \[ \sigma(\Delta_n) = \prod_{i=1, j>i}^n (\sigma(i) - \sigma(j)). \]}~\\
+\lemma{5.1}{For any $\sigma \in S_n$, $\sigma(\Delta_n) = \text{sign}(\sigma)\Delta_n$.}~\\
+\lemma{5.2}{If $\alpha, \beta \in S_n$ then $\text{sign}(\alpha \circ \beta) = \text{sign}(\alpha) \text{sign}(\beta)$, and $\text{sign}(\alpha^{-1}) = \text{sign}(\alpha)$.}~\\
+\lemma{5.3}{Every transposition (i.e. swap of two elements) in $S_n$ is odd.}~\\
+\theorem{5.4}{Let $A \in M_{p,p}$. Then
+\begin{itemize}
+  \item $\text{det}(A) = \sum_{\sigma \in S_n} \text{sign}(\sigma)a_{\sigma (1)1}a_{\sigma(2)2} \ldots a_{\sigma(n) n}$.
+  \item $\text{det}(A) = \text{det}(A^T)$ and $\text{det}(A^*) = \overline{\text{det}(A)}$.
+  \item If any row or column of $A$ is zero, $\text{det}(A) = 0$.
+  \item If a permutation is applied to the rows or columns of $A$, then the determinant is multiplied by the sign of the permutation.
+  \item If $A$ has two rows or two columns the same, then $\text{det}(A) = 0$.
+  \item If any row or column of $A$ has a multiple of another row or column (respectively) added to it, the determinant is unchanged.
+\end{itemize}}~\\
+\theorem{5.5}{If $\text{det}$ is considered as a map on the rows or columns of a matrix (that is, from $p$ copies of $\mathbb{F}^p$ to $\mathbb{F}$), then it is multilinear and alternating.\\[1\baselineskip]A special case: if any row or column of $A$ is multiplied by a constant $\alpha$, then the determinant is multiplied by $\alpha$.}~\\
+\definition{5.4}{For $A \in M_{p,p}(\mathbb{F})$, let $A_{ij}$ be the matrix obtained by deleting row $i$ and column $j$. We call $A_{ij}$ the $(i, j)-\text{minor}$ of $A$.}~\\
+\lemma{5.6}{Suppose that row $i$ of matrix $A \in M_{p,p}(\mathbb{F})$ is zero except for entry $a_{ij}$. Then \[ \text{det}(A) = (-1)^{i+j} a_{ij} \text{det}(A_{ij}). \]}
+\definition{5.5}{An elementary matrix is a matrix obtained from an identity matrix after an elementary row operation.}~\\
+\lemma{5.8}{If $A$ is invertible there is a sequence of elementary matrices $E_1, E_2, \ldots, E_k$ such that \[ A = E_1 E_2 \ldots E_k \qquad \text{and} \qquad \text{det}(A) = \prod_{i=1}^k \text{det}(E_i). \]}\newpage
+\lemma{5.9}{A matrix $A$ is invertible if and only if $\text{det}(A) \neq 0$.}~\\
+\theorem{5.10}{For any two matrices $A$ and $B$, \[ \text{det}(AB) = \text{det}(A) \text{det}(B). \]}
+\definition{5.6}{In matrix $A$ the number $c_{ij} = (-1)^{i + j} \text{det}(A_{ij})$ is called the cofactor of element $a_{ij}$.}~\\
+\theorem{5.13}{For any $A \in M_{p,p}(\mathbb{F})$ and any fixed $j$, \[\text{det}(A) = \sum_{i=1}^p a_{ij}c_{ij},\]that is to say, pick a column (fixed $j$), multiply each element by its cofactor and add up to get the determinant. This works by rows as well.}~\\
+\definition{5.6}{For $A \in M_{p,p}(\mathbb{F})$ the adjugate of $A$, $\text{adj}$ is the transpose of the matrix of cofactors: \[ \text{adj}(A)_{ij} = c_{ij}. \]}
+\theorem{5.14}{For an invertible matrix $A$, $A^{-1} = \frac{\text{adj}(A)}{\text{det}(A)}$.}\newpage
+\definition{6.1}{Suppose $T \in L(V,V)$:
+\begin{itemize}
+  \item if $T(\vect{v}) = \alpha \vect{v}, \; \alpha \in \mathbb{F}, \; \vect{v} \neq \vect{0}$, then $\alpha$ is an eigenvalue of $T$, and $\vect{v}$ is an eigenvector for $T$ corresponding to $\alpha$, i.e. it is a vector that does not move under the transformation.
+  \item If $\lambda$ is an eigenvalue of $T$, then the eigenspace of $T$, $E_\lambda(T) = \{ \vect{v} \in V: T(\vect{v}) = \lambda \vect{v} \}$.
+  \item We call the set of all eigenvalues of $T$ the spectrum of $T$.
+\end{itemize}}~\\
+\lemma{6.1}{Let $T: V \rightarrow V$ be linear. Then
+\begin{itemize}
+  \item $E_\lambda(T) = \text{ker}(\lambda \text{id}-T)$.
+  \item If $\lambda_1, \ldots, \lambda_k$ are distinct eigenvalues and $T(\vect{v}_i) = \lambda_i \vect{v}_i$ then $\vect{v}_1, \ldots, \vect{v}_k$ are linearly independent.
+  \item If $\lambda \neq \mu$ then $E_\lambda(T) \cap E_\mu(T) = \{ \vect{0} \}$.
+\end{itemize}}~\\
+\definition{6.2}{A matrix $A \in M_{p,p}(\mathbb{F})$ is diagonalisable over $\mathbb{F}$ if there is an invertible matrix $P \in \text{GL}(p, \mathbb{F})$ such that $P^{-1}AP$ is diagonal, that is, $A$ is similar over $\mathbb{F}$ to a diagonal matrix.\\A linear map $T: V \rightarrow V$ is diagonalisable if there is a basis of $V$ with respect to which the matrix of $T$ is diagonal.}~\\
+\theorem{6.2}{If $T \in L(V,V)$ where $V$ is a finite dimensional vector space over $\mathbb{F}$, then $T$ is diagonalisable if and only if $V$ has a basis whose elements are all eigenvectors of $T$.\\Similarly, $A \in M_{p,p}(\mathbb{F})$ is diagonalisable if and only if $\mathbb{F}^p$ has a basis consisting of eigenvectors of $A$.}~\\
+\corollary{6.3}{A $p \times p$ matrix with $p$ distinct eigenvalues is diagonalisable.}\newpage
+\definition{6.3}{If $A$ is a $p \times p$ matrix over $\mathbb{F}$ then the characteristic polynomial of $A$ is \[\text{cp}_A(t) = \text{det}(tI - A).\]}
+\lemma{6.4}{The characteristic polynomial is a similarity invariant.}~\\
+\definition{6.4}{If $V$ is finite dimensional and $T \in L(V,V)$ the characteristic polynomial of $T$, $\text{cp}_T(t)$, is defined to be $\text{cp}_A(t)$ for any matrix $A$ of $T$.}~\\
+\lemma{6.5}{Suppose $T \in L(V,V)$, with $\text{dim}V = n$. Then
+\begin{itemize}
+  \item $\lambda$ is an eigenvalue if and only if $\text{cp}_T(\lambda) = 0$.
+  \item $W \leq E_\lambda(T)$ implies $W$ is $T$-invariant.
+  \item $\lambda$ is an eigenvalue if and only if $\text{nullity}(T - \lambda \text{id}) > 0$.
+\end{itemize}}~\\
+\theorem{6.6}{Let $T: V \rightarrow V$ be linear on finite dimensional space $V$, and $\mathcal{B}$ be a basis for $V$. Let $A$ be the matrix of $T$ with respect to $\mathcal{B}$. The following are equivalent:
+\begin{itemize}
+  \item $\vect{v}$ is an eigenvector of $T$ corresponding to eigenvalue $\lambda$;
+  \item the coordinate vector $[\vect{v}]_\mathcal{B}$ is an eigenvector of $A$ corresponding to eigenvalue $\lambda$.
+\end{itemize}}~\\
+\definition{Diagonalisation Algorithm}{Given matrix $A$,
+\begin{enumerate}
+  \item Calculate $\text{cp}_A(t)$.
+  \item Find all roots $\alpha$ of $\text{cp}_A(t)$.
+  \item For each $\alpha$, calculate $\text{dim}(E_\alpha(A))$.
+  \item If $\sum_\alpha \text{dim}(E_\alpha(A)) = n$ then $A$ is diagonalisable.
+  \item If $A$ is diagonalisable construct $P$, whose columns are a basis of $V$ consisting of eigenvectors of $A$, so that $D=P^{-1}AP$ is diagonal.
+\end{enumerate}
+The entries in $D$ will be the eigenvalues of $A$, and their order will match the order of the eigenvectors in $P$.}\newpage
+\definition{6.5}{Suppose $T$ is a linear map on finite dimensional vector space $V$. Suppose further that $\lambda$ is an eigenvalue of $T$ so that $t - \lambda$ is a factor of the characteristic polynomial of $T$.\\The geometric multiplicity of $\lambda$ is $\text{dim}(E_\lambda(T))$.\\The algebraic multiplicity of $\lambda$ is its multiplicity as a factor of $\text{cp}_T(t)$.}~\\
+\theorem{6.7}{Suppose $A \in M_{p,p}(\mathbb{C})$. Then $A$ has $p$ eigenvalues $\alpha_1, ldots, \alpha_p$ counting algebraic multiplicities. Also \[\text{det}(A) = \prod_{i=1}^p \alpha_i \quad \text{and} \quad \text{trace}(A) = \sum_{i=1}^p \alpha_i.\]Note: knowing the determinant and trace will suffice to give the eigenvalues.}~\\
+\theorem{6.8}{Let $T: V \rightarrow V$ be linear on finite dimensional space $V$ and $\lambda$ an eigenvalue of $T$. Then \[1 \leq \text{geometric multiciplity} \lambda \leq \text{algebraic multiplicity} \lambda.\]}~\\
+\theorem{6.9}{Let $T: V \rightarrow V$ be linear on finite dimensional space $V$. The following four statements are equivalent:
+\begin{itemize}
+  \item $T$ is diagonalisable.
+  \item There is a basis for $V$ consisting of eigenvectors for $T$.
+  \item $V = E_{\lambda_1}(T) \oplus E_{\lambda_2}(T) \oplus \ldots \oplus E_{\lambda_k}(T)$ where $\lambda_1, \ldots \lambda_k$ are the distinct eigenvalues of $T$.
+  \item The sum of the geometric multiplication of the distinct eigenvalue is $\text{dim}(V)$. That is, \[\sum_{j=1}^k \text{dim}E_{\lambda_j}(T) = \text{dim}V.\]
+\end{itemize}}
+\corollary{6.10}{Linear map $T$ on a $p$-dimensional space $V$ over $\mathbb{F}$ is diagonalisable if $\text{cp}_T(t)$ has $p$ distinct roots in $\mathbb{F}$.}\newpage
+\definition{6.4}{A linear transformation on an inner product space is normal if and only if $T^* \circ T = T \circ T^*$ and an $n \times n$ matrix is normal if and only if $A^*A = AA^*$.}~\\
+\theorem{6.11}{Let $V$ be a finite dimensional inner product space and $T$ a normal linear map on $V$. Then
+\begin{itemize}
+  \item For all $\vect{v} \in V$, $||T(\vect{v})|| = ||T^*(\vect{v})||$.
+  \item For any scalar $\alpha$, $(T-\alpha \text{id})$ is also normal.
+  \item If $T$ has eigenvalue $\lambda$, then $\overline{\lambda}$ is an eigenvalue of $T^*$.
+  \item $E_\lambda(T) = E_{\overline{\lambda}}(T^*)$.
+  \item If $\lambda \neq \mu$ then $E_\lambda(T) \perp E_\mu(T)$.
+\end{itemize}}~\\
+\theorem{6.12}{if $T$ is normal with eigenvalue $\lambda$ then the algebraic multiple of $\lambda$ equals the geometric multiplication of $\lambda$.}~\\
+\theorem{6.13. The Spectral Theorem for Normal Operators}{If $V$ is a finite dimensional inner product space over $\mathbb{C}$ and $T \in L(V,V)$ is normal then there is an orthonormal basis $\mathcal{B}$ of $V$ consisting of eigenvectors of $T$.\\Hence if $A \in M_{p,p}(\mathbb{C})$ is normal there is a unitary $P$ such that $P^{-1}AP = P^*AP$ is diagonal.\\Conversely, if $[T]_\mathcal{B}^\mathcal{B} = A = PDP^{-1}$, with $D$ diagonal and $P$ unitary (so $\mathcal{B}$ is orthonormal) then both $A$ and $T$ are normal.}~\\
+\corollary{6.14}{If $A$ is normal with eigenvalues $\lambda_i$, then there are matrices $P_i$ with \[A = \sum_i \lambda_i P_i, \qquad {P_i}^2 = P_i = {P_i}^*,\] \[P_i P_j = 0 \quad i \neq j, \qquad \sum_i P_i = \text{id}.\]}~\\
+\theorem{6.15}{Suppose $V$ is a finite dimensional inner product space over field $\mathbb{F}$ (where $\mathbb{F}$ is either $\mathbb{R}$ or $\mathbb{C}$) and $T \in L(V,V)$.
+\begin{itemize}
+  \item If $T$ is self-adjoint (i.e. Hermitian if $\mathbb{F} = \mathbb{C}$ or symmetric if $\mathbb{F} = \mathbb{R}$) then the eigenvalues of $T$ are real.
+  \item If $\mathbb{F} = \mathbb{C}$ and $T$ is Hermitian there is a unitary basis for $V$ consisting of eigenvectors of $T$.
+  \item If $\mathbb{F} = \mathbb{R}$ and $T$ is symmetric, there there is a real orthonormal basis of $V$ consisting of eigenvectors of $T$.
+\end{itemize}}~\\
+\definition{Conics and Quadric Surfaces}{\vspace{1cm}
+\begin{center}
+  \includegraphics[scale=0.45]{assets/6_5_1.PNG}
+\end{center}}~\\
+\lemma{6.16}{Suppose $V$ is a $p$-dimensional inner product space over field $\mathbb{F}$ (where $\mathbb{F}$ is $\mathbb{R}$ or $\mathbb{C}$), with $T \in L(V,V)$ a unitary map.\\Then the eigenvalues of $T$ lie on the unit circle in $\mathbb{C}$, that is are $e^i \alpha_k$ for real $\alpha_k$ and $V$ has a unitary basis of eigenvectors of $T$.}~\\
+\theorem{6.17}{Suppose $T$ is an isometry on a real inner product space $V$. Then its characteristic polynomial is of the form \[\text{cp}_T(t) = (t-1)^\alpha (t+1)^b \prod_{j=1}^k (t-e^{i \alpha_j})(t-e^{-i \alpha_j})\]where $a + b + 2k = \text{dim}(V)$ and $\alpha_j \in (0, \pi)$.\\Also there is an orthonormal basis of $V$ in which the matrix of $T$ is of the form \[I_a \oplus (-I_b) \bigoplus_{j=1}^k R(\alpha_j).\]}\newpage
+\definition{6.7}{Let $A \in M_{p,q}(\mathbb{C})$. A singular value decomposition of $A$ is a factorisation of $A$ as $U \sum V^*$ where $U$ and $V$ are square and unitary and $\sum$ is a $p \times q$ matrtix with zero off diagonal terms and diagonal entries called the singular values satisfying \[\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_q \geq 0.\]The columns of $U$ are called left singular vectors and the columns of $V$ right singular vectors.}~\\
+\lemma{6.18}{Let $A \in M_{p,q}(\mathbb{F})$ for $\mathbb{F}$ either $\mathbb{R}$ or $\mathbb{C}$. Then
+\begin{itemize}
+  \item $\text{ker}(A^*A) = \text{ker}(A)$.
+  \item $\text{rank}(A^*A) = \text{rank}(A)$.
+\end{itemize}}~\\
+\theorem{6.19. Singular Value Decomposition}{For any matrix $A$ an SVD exists and the singular values are unique.}~\\
+\definition{6.8}{If $A \in M_{p,q}(\mathbb{C}$ is rank $k$ then the reducied singular value decomposition is the decomposition \[A = \hat{U} \hat{\sum} \hat{V}^*\]where $\hat{U}$ and $\hat{V}$ have orthonormal columns and $\hat{\sum}$ is $k \times k$ invertible and diagonal.)}~\\
+\lemma{6.20}{For any $p \times q$ matrix of rank $k$:
+\begin{itemize}
+  \item The last $q - k$ right singular vectors are an orthonormal basis of $\text{ker}(A)$.
+  \item The first $k$ left singular vectors are an orthonormal basis of $\text{im}(A)$.
+  \item $\sum_{i=1}^k {\sigma_1}^2 = \text{tr}(\vect{A}^* \vect{A}) = \sum_{i=1}^q \sum_{j=1}^q | a_{ij} |^2$.
+\end{itemize}
+This last result tells us that the sum of the squares of the singular values gives us the norm that we get from the standard inner product $\langle A, B \rangle = \text{tr}(A^*B)$ on matrices.}\newpage
+\definition{6.9}{For an arbitrary $A$ with reduced SVD $\hat{U} \hat{\sum} \hat{V}^*$ we define the pseudoinverse of $A$, $A^+$ by \[A^+ = \hat{U} \hat{\sum}^{-1} \hat{V}^*.\]}
+\theorem{6.21}{The least squares solution to $A \vect{x} = \vect{b}$ for $A$ of full rank is given by $\vect{x} = A^+ \vect{b}$.}~\\
+\definition{6.7.1. The SVD and Approximation}{The main use and power of the SVD follows from its use as a method of approximating matrices with matrices of lower rank.\\For matrices that arise in practice, many of the singular values may be quite small, i.e. they might only be non-zero because of round-off error, for example.\\So if we set all appropriately small non-singular values to be zero, we can replace the matrix by a lower rank approximation, and only need to keep the reduced SVD of this approximation.}
 \end{document}
